@@ -4,25 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Patriot Consulting</title>
-  <meta name="description" content="Patriot Consulting helps candidates, campaigns, advocacy groups, and public-facing organizations with strategy, messaging, digital outreach, and communications." />
+  <meta
+    name="description"
+    content="Patriot Consulting helps candidates, campaigns, advocacy groups, and public-facing organizations with political strategy, messaging, digital outreach, and communications."
+  />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
       --bg: #f4f7fb;
-      --panel: rgba(255, 255, 255, 0.86);
+      --bg-2: #eef3f9;
+      --panel: rgba(255, 255, 255, 0.90);
       --line: rgba(16, 24, 40, 0.10);
+      --line-soft: rgba(16, 24, 40, 0.06);
       --text: #0f1728;
       --muted: #475467;
       --muted-2: #667085;
       --navy: #102542;
       --navy-2: #183b68;
+      --navy-3: #0b1a2d;
       --blue: #4f8edc;
       --blue-2: #7db3f4;
       --gold: #d9a441;
+      --gold-2: #f0c56a;
+      --white: #ffffff;
       --shadow: 0 20px 50px rgba(16, 24, 40, 0.10);
       --shadow-soft: 0 10px 30px rgba(16, 24, 40, 0.06);
       --radius: 28px;
@@ -44,8 +55,8 @@
       font-family: 'Inter', Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(79, 142, 220, 0.14), transparent 30%),
-        radial-gradient(circle at right top, rgba(217, 164, 65, 0.10), transparent 22%),
+        radial-gradient(circle at top left, rgba(79, 142, 220, 0.13), transparent 30%),
+        radial-gradient(circle at right top, rgba(217, 164, 65, 0.08), transparent 20%),
         linear-gradient(180deg, #f8fbff 0%, #f2f6fb 100%);
       line-height: 1.6;
     }
@@ -71,7 +82,7 @@
       z-index: 100;
       background: rgba(248, 251, 255, 0.88);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(16, 24, 40, 0.06);
+      border-bottom: 1px solid var(--line-soft);
     }
 
     .header-inner {
@@ -100,13 +111,13 @@
     }
 
     .brand-logo {
-      width: 64px;
-      height: 64px;
+      width: 66px;
+      height: 66px;
       border-radius: 18px;
       background: #ffffff;
       border: 1px solid rgba(16, 24, 40, 0.08);
       box-shadow: 0 10px 24px rgba(16, 24, 40, 0.12);
-      padding: 4px;
+      padding: 6px;
     }
 
     .brand-logo img {
@@ -116,13 +127,14 @@
     }
 
     .panel-logo {
-      width: 68px;
-      height: 68px;
+      width: 70px;
+      height: 70px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       padding: 8px;
       backdrop-filter: blur(8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     }
 
     .panel-logo img {
@@ -151,15 +163,15 @@
     }
 
     .panel-logo.logo-fallback::before {
-      background: rgba(255,255,255,0.16);
+      background: rgba(255, 255, 255, 0.16);
       color: #fff;
       font-size: 1rem;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
     .brand-title {
       font-family: 'Manrope', sans-serif;
-      font-size: 1.22rem;
+      font-size: 1.24rem;
       font-weight: 800;
       letter-spacing: 0.02em;
       line-height: 1;
@@ -169,9 +181,10 @@
     .brand-subtitle {
       margin-top: 4px;
       color: var(--blue);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 800;
       letter-spacing: 0.22em;
+      text-transform: uppercase;
     }
 
     nav {
@@ -185,6 +198,7 @@
       color: var(--muted);
       font-size: 0.95rem;
       font-weight: 700;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
@@ -192,13 +206,13 @@
     }
 
     .hero {
-      padding: 78px 0 56px;
+      padding: 84px 0 56px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.08fr 0.92fr;
-      gap: 28px;
+      gap: 30px;
       align-items: stretch;
     }
 
@@ -219,10 +233,11 @@
     h1 {
       margin: 0;
       font-family: 'Manrope', sans-serif;
-      font-size: clamp(3rem, 6vw, 5.6rem);
-      line-height: 0.96;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.95;
       letter-spacing: -0.05em;
       color: var(--navy);
+      max-width: 760px;
     }
 
     .hero-copy p {
@@ -272,7 +287,7 @@
     .btn-secondary {
       border: 1px solid rgba(16, 24, 40, 0.10);
       color: var(--navy);
-      background: rgba(255,255,255,0.72);
+      background: rgba(255, 255, 255, 0.78);
     }
 
     .btn-secondary:hover {
@@ -281,7 +296,7 @@
 
     .card {
       background: var(--panel);
-      border: 1px solid rgba(255,255,255,0.65);
+      border: 1px solid rgba(255, 255, 255, 0.70);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
@@ -289,12 +304,13 @@
     .hero-panel {
       position: relative;
       overflow: hidden;
-      padding: 30px;
-      background:
-        radial-gradient(circle at top right, rgba(217, 164, 65, 0.18), transparent 24%),
-        linear-gradient(135deg, #112642 0%, #193c6a 52%, #4f8edc 100%);
-      color: white;
       min-height: 100%;
+      padding: 30px;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(11, 26, 45, 0.24), rgba(11, 26, 45, 0.70)),
+        linear-gradient(135deg, rgba(16, 37, 66, 0.92), rgba(24, 59, 104, 0.74)),
+        url('./loudounHills-1024x768.jpg') center center / cover no-repeat;
     }
 
     .hero-panel::before {
@@ -302,21 +318,24 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.08), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(255,255,255,0.10), transparent 28%);
+        linear-gradient(180deg, rgba(255,255,255,0.08), transparent 32%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,0.08), transparent 28%);
       pointer-events: none;
     }
 
     .hero-panel-inner {
       position: relative;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .panel-top {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .panel-kicker {
@@ -324,7 +343,7 @@
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #cfe4ff;
+      color: #d8e9ff;
     }
 
     .panel-title {
@@ -336,18 +355,25 @@
       color: white;
     }
 
+    .panel-lead {
+      max-width: 620px;
+      margin: 0 0 24px;
+      color: rgba(255,255,255,0.90);
+      font-size: 1rem;
+    }
+
     .strength-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 10px;
     }
 
     .strength-card {
       padding: 18px;
       border-radius: 20px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       backdrop-filter: blur(10px);
       min-height: 120px;
     }
@@ -375,7 +401,7 @@
       margin: 0;
       font-size: 0.93rem;
       line-height: 1.5;
-      color: rgba(255,255,255,0.82);
+      color: rgba(255,255,255,0.84);
     }
 
     section {
@@ -384,7 +410,7 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.92fr 1.08fr;
       gap: 34px;
       align-items: start;
     }
@@ -400,7 +426,7 @@
     h2.section-title {
       margin: 10px 0 0;
       font-family: 'Manrope', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-size: clamp(2rem, 4vw, 3.3rem);
       line-height: 1.02;
       letter-spacing: -0.04em;
       color: var(--navy);
@@ -414,21 +440,63 @@
       font-size: 1.06rem;
     }
 
+    .about-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .about-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(16,24,40,0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-point-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #eff6ff, #dcecff);
+      color: var(--navy);
+    }
+
+    .about-point strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.98rem;
+      margin-bottom: 2px;
+    }
+
+    .about-point span {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
     .services-wrap {
       padding: 78px 0;
       background: linear-gradient(180deg, rgba(79,142,220,0.06), rgba(255,255,255,0));
-      border-top: 1px solid rgba(16, 24, 40, 0.06);
-      border-bottom: 1px solid rgba(16, 24, 40, 0.06);
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
     }
 
     .services-intro {
-      max-width: 820px;
+      max-width: 860px;
       margin-bottom: 28px;
     }
 
     .service-grid,
     .results-grid,
-    .contact-grid {
+    .contact-grid,
+    .difference-grid {
       display: grid;
       gap: 18px;
     }
@@ -440,7 +508,7 @@
     .service-card {
       padding: 24px;
       border-radius: 22px;
-      background: rgba(255,255,255,0.86);
+      background: rgba(255,255,255,0.88);
       border: 1px solid rgba(16, 24, 40, 0.08);
       box-shadow: var(--shadow-soft);
     }
@@ -464,6 +532,44 @@
     }
 
     .service-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .difference-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 26px;
+    }
+
+    .difference-card {
+      padding: 26px;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f1f6fc 100%);
+      border: 1px solid rgba(16, 24, 40, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .difference-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(79, 142, 220, 0.10);
+      color: var(--navy-2);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .difference-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.12rem;
+    }
+
+    .difference-card p {
       margin: 0;
       color: var(--muted);
     }
@@ -507,10 +613,14 @@
       font-weight: 700;
     }
 
+    .contact-lines a:hover {
+      color: var(--blue);
+    }
+
     .form-card {
       padding: 24px;
       border-radius: 24px;
-      background: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.90);
       border: 1px solid rgba(16, 24, 40, 0.08);
       box-shadow: var(--shadow-soft);
     }
@@ -529,6 +639,14 @@
       border-radius: 16px;
       padding: 14px 16px;
       font: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: rgba(79, 142, 220, 0.55);
+      box-shadow: 0 0 0 4px rgba(79, 142, 220, 0.10);
     }
 
     input::placeholder,
@@ -548,7 +666,7 @@
     }
 
     footer {
-      border-top: 1px solid rgba(16, 24, 40, 0.06);
+      border-top: 1px solid var(--line-soft);
       padding: 22px 0 34px;
       color: var(--muted-2);
       font-size: 0.94rem;
@@ -577,12 +695,17 @@
       .contact-grid,
       .service-grid,
       .results-grid,
+      .difference-grid,
       .strength-grid {
         grid-template-columns: 1fr;
       }
 
       .hero {
         padding-top: 56px;
+      }
+
+      .hero-panel {
+        min-height: 540px;
       }
     }
 
@@ -608,7 +731,7 @@
       }
 
       .brand-title {
-        font-size: 1.05rem;
+        font-size: 1.06rem;
       }
 
       .brand-subtitle {
@@ -619,8 +742,17 @@
       .hero-panel,
       .service-card,
       .result-card,
+      .difference-card,
       .form-card {
         padding: 20px;
+      }
+
+      .panel-title {
+        font-size: 1.65rem;
+      }
+
+      .hero-panel {
+        min-height: 480px;
       }
     }
   </style>
@@ -628,17 +760,22 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top">
+      <a class="brand" href="#top" aria-label="Patriot Consulting home">
         <div class="brand-logo" id="headerLogoWrap">
-          <img src="./logo.png" alt="Patriot Consulting logo" id="headerLogo" />
+          <img
+            src="./patriot_logo_full_color.png"
+            alt="Patriot Consulting logo"
+            id="headerLogo"
+          />
         </div>
+
         <div class="brand-text">
           <div class="brand-title">PATRIOT</div>
           <div class="brand-subtitle">CONSULTING</div>
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="#about">Why Patriot</a>
         <a href="#services">Services</a>
         <a href="#approach">Approach</a>
@@ -651,13 +788,19 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Political strategy • digital • communications</div>
-          <h1>Make your voice heard.</h1>
+          <div class="eyebrow">Political strategy • public affairs • communications</div>
+
+          <h1>Win the argument. Hold the ground. Move people to act.</h1>
+
           <p>
-            Patriot Consulting helps candidates, campaigns, advocacy groups, and public-facing organizations communicate clearly, look credible, and move fast.
+            Patriot Consulting helps candidates, campaigns, advocacy groups, coalitions,
+            and public-facing organizations build a sharper message, stronger digital
+            presence, and a clearer plan to influence opinion.
           </p>
+
           <p class="small">
-            Strategy matters. Message matters. And looking like you know what you are doing matters too.
+            In politics and public affairs, credibility matters. So does speed. So does
+            knowing when to press, when to respond, and when to stay disciplined.
           </p>
 
           <div class="hero-actions">
@@ -666,62 +809,72 @@
           </div>
         </div>
 
-        <div class="card hero-panel">
+        <div class="card hero-panel" aria-label="Patriot Consulting highlights">
           <div class="hero-panel-inner">
             <div class="panel-top">
               <div class="panel-logo" id="panelLogoWrap">
-                <img src="./logo.png" alt="Patriot Consulting logo" id="panelLogo" />
+                <img
+                  src="./patriot_logo_white.png"
+                  alt="Patriot Consulting logo"
+                  id="panelLogo"
+                />
               </div>
+
               <div>
-                <div class="panel-kicker">Core strengths</div>
-                <div class="panel-title">Built for modern campaigns</div>
+                <div class="panel-kicker">What Patriot brings</div>
+                <div class="panel-title">Built for pressure, timing, and public fights</div>
               </div>
             </div>
+
+            <p class="panel-lead">
+              From campaign messaging to digital cleanup to fast-turn response, Patriot
+              helps clients look prepared, stay on message, and operate like they mean it.
+            </p>
 
             <div class="strength-grid">
               <div class="strength-card">
                 <div class="strength-icon">
-                  <svg class="icon-svg" viewBox="0 0 24 24">
+                  <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 2v20"></path>
                     <path d="M2 12h20"></path>
                   </svg>
                 </div>
-                <h3>Responsive</h3>
-                <p>Easy to reach. Quick to turn. No disappearing act when things get busy.</p>
+                <h3>Rapid response</h3>
+                <p>Quick turns, practical edits, and support when the issue is live and the clock is not your friend.</p>
               </div>
 
               <div class="strength-card">
                 <div class="strength-icon">
-                  <svg class="icon-svg" viewBox="0 0 24 24">
+                  <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M4 19h16"></path>
                     <path d="M7 16V8"></path>
                     <path d="M12 16V5"></path>
                     <path d="M17 16v-4"></path>
                   </svg>
                 </div>
-                <h3>Experienced</h3>
-                <p>Grounded in campaigns and communications, not just pretty mockups and theory.</p>
+                <h3>Political judgment</h3>
+                <p>Not just good-looking materials. Real strategy shaped by campaigns, persuasion, and public pressure.</p>
               </div>
 
               <div class="strength-card">
                 <div class="strength-icon">
-                  <svg class="icon-svg" viewBox="0 0 24 24">
+                  <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"></path>
                   </svg>
                 </div>
-                <h3>Trustworthy</h3>
-                <p>Sensitive work stays sensitive. That should be standard, but here we are.</p>
+                <h3>Message discipline</h3>
+                <p>Clear, repeatable language that helps clients explain themselves without wandering into the weeds.</p>
               </div>
 
               <div class="strength-card">
                 <div class="strength-icon">
-                  <svg class="icon-svg" viewBox="0 0 24 24">
+                  <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                     <rect x="3" y="4" width="18" height="14" rx="2"></rect>
                     <path d="M7 20h10"></path>
                   </svg>
                 </div>
-                <h3>Credible Digital</h3>
-                <p>Clean websites and materials that look current, professional, and ready to win trust.</p>
+                <h3>Modern digital</h3>
+                <p>Websites and communications materials that look current, serious, and ready for scrutiny.</p>
               </div>
             </div>
           </div>
@@ -733,19 +886,66 @@
       <div class="container about-grid">
         <div>
           <div class="section-kicker">Why Patriot</div>
-          <h2 class="section-title">Strategy, design, and communication that work together.</h2>
+          <h2 class="section-title">Political communications that feel organized, not improvised.</h2>
         </div>
 
         <div class="body-copy">
           <p>
-            Patriot Consulting was built around a simple idea: campaigns and public-facing efforts need strong messaging, smart digital tools, and responsive support.
+            Patriot Consulting is built for candidates, issue advocates, and organizations
+            that need smart strategy, disciplined messaging, and digital tools that match
+            the seriousness of the work.
           </p>
+
           <p>
-            This version broadens the positioning beyond one county or one region. The tone is still grounded in politics and advocacy, but the look is cleaner, sharper, and better suited for 2026 and beyond.
+            This is not a generic agency model. It is built around the reality that public
+            opinion moves fast, local fights can turn quickly, and credibility is often won
+            or lost in how clearly you communicate under pressure.
           </p>
+
           <p>
-            Less old campaign website. More serious modern operation.
+            Good strategy matters. Good writing matters. Looking prepared matters too.
           </p>
+
+          <div class="about-points">
+            <div class="about-point">
+              <div class="about-point-mark">
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Clear positioning</strong>
+                <span>Know what you stand for, what to say, and what not to say.</span>
+              </div>
+            </div>
+
+            <div class="about-point">
+              <div class="about-point-mark">
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 20V10"></path>
+                  <path d="M18 20V4"></path>
+                  <path d="M6 20v-6"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Practical execution</strong>
+                <span>Plans that work in the real world, not just in a deck.</span>
+              </div>
+            </div>
+
+            <div class="about-point">
+              <div class="about-point-mark">
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 12h18"></path>
+                  <path d="M12 3v18"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Fast support</strong>
+                <span>When the issue breaks, the window to respond is usually not generous.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -756,79 +956,101 @@
           <div class="section-kicker">Services</div>
           <h2 class="section-title">What Patriot Consulting can help you do.</h2>
           <p>
-            Messaging and strategic communications still decide a lot of races and issue fights. Add strong digital execution, and you stop looking like a campaign built in a hurry on three hours of sleep.
+            Elections, advocacy campaigns, local fights, and public controversies all run
+            on message, timing, and trust. Patriot helps clients tighten the strategy,
+            sharpen the language, and present themselves like a serious operation.
           </p>
         </div>
 
         <div class="service-grid">
           <div class="service-card">
             <div class="service-icon">
-              <svg class="icon-svg" viewBox="0 0 24 24">
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M3 21l6-6"></path>
                 <path d="M14 7l3-3 3 3-3 3-3-3z"></path>
                 <path d="M5 13l6 6"></path>
                 <path d="M11 7l6 6"></path>
               </svg>
             </div>
-            <h3>Campaign Strategy</h3>
-            <p>Clear positioning, sharp message discipline, and practical plans for candidates, causes, and advocacy efforts.</p>
+            <h3>Political strategy</h3>
+            <p>Sharper positioning, better message discipline, and practical plans for candidates, causes, and issue campaigns.</p>
           </div>
 
           <div class="service-card">
             <div class="service-icon">
-              <svg class="icon-svg" viewBox="0 0 24 24">
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="4" width="18" height="14" rx="2"></rect>
                 <path d="M8 20h8"></path>
               </svg>
             </div>
-            <h3>Web & Digital</h3>
-            <p>Modern websites, email, content, and digital outreach built to look credible and move people to act.</p>
+            <h3>Web and digital</h3>
+            <p>Modern websites, email, and digital materials that look clean, current, and credible to voters, supporters, and stakeholders.</p>
           </div>
 
           <div class="service-card">
             <div class="service-icon">
-              <svg class="icon-svg" viewBox="0 0 24 24">
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
               </svg>
             </div>
-            <h3>Message Development</h3>
-            <p>Plain-English messaging that helps you explain who you are, what you stand for, and why it matters.</p>
+            <h3>Message development</h3>
+            <p>Plain-English messaging that tells people who you are, what you stand for, and why they should care.</p>
           </div>
 
           <div class="service-card">
             <div class="service-icon">
-              <svg class="icon-svg" viewBox="0 0 24 24">
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 12h16"></path>
                 <path d="M12 4v16"></path>
                 <circle cx="12" cy="12" r="9"></circle>
               </svg>
             </div>
-            <h3>Social Media</h3>
-            <p>Smarter posting, cleaner visuals, and a strategy that supports your broader communications goals.</p>
+            <h3>Social media and content</h3>
+            <p>Cleaner visuals, stronger posting discipline, and content that supports your broader political or public affairs strategy.</p>
           </div>
 
           <div class="service-card">
             <div class="service-icon">
-              <svg class="icon-svg" viewBox="0 0 24 24">
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                 <circle cx="8.5" cy="7" r="4"></circle>
                 <path d="M20 8v6"></path>
                 <path d="M23 11h-6"></path>
               </svg>
             </div>
-            <h3>Grassroots Support</h3>
-            <p>Voter contact strategy, supporter engagement, and local outreach that fits the reality on the ground.</p>
+            <h3>Grassroots and stakeholder outreach</h3>
+            <p>Supporter engagement, local outreach, and practical communications that match the realities on the ground.</p>
           </div>
 
           <div class="service-card">
             <div class="service-icon">
-              <svg class="icon-svg" viewBox="0 0 24 24">
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"></path>
               </svg>
             </div>
-            <h3>Rapid Response</h3>
-            <p>Fast edits, quick guidance, and help when timing matters most. Politics rarely waits around.</p>
+            <h3>Rapid response</h3>
+            <p>Fast edits, quick guidance, and communications support when the pressure is up and the timeline just got stupid.</p>
+          </div>
+        </div>
+
+        <div class="difference-grid">
+          <div class="difference-card">
+            <div class="difference-label">How Patriot works</div>
+            <h3>Not agency fluff</h3>
+            <p>Advice is direct, practical, and tied to what helps a client win support or limit damage.</p>
+          </div>
+
+          <div class="difference-card">
+            <div class="difference-label">How Patriot works</div>
+            <h3>Political instincts included</h3>
+            <p>The work is shaped by how campaigns and public fights actually move, not just by design trends.</p>
+          </div>
+
+          <div class="difference-card">
+            <div class="difference-label">How Patriot works</div>
+            <h3>Built for scrutiny</h3>
+            <p>Materials should hold up when supporters, press, opponents, and local stakeholders all take a look.</p>
           </div>
         </div>
       </div>
@@ -837,22 +1059,22 @@
     <section id="approach">
       <div class="container">
         <div class="section-kicker">Approach</div>
-        <h2 class="section-title">Straightforward, responsive, and built to move.</h2>
+        <h2 class="section-title">Straightforward, responsive, and built for public pressure.</h2>
 
         <div class="results-grid">
           <div class="result-card">
-            <div class="result-number">Decades</div>
-            <p>of campaign and communications experience behind smart strategy and practical execution.</p>
+            <div class="result-number">Disciplined</div>
+            <p>Message development that stays focused and keeps clients from saying five things when one would do.</p>
           </div>
 
           <div class="result-card">
             <div class="result-number">Fast</div>
-            <p>turnarounds when timing matters and there is no room for slow back-and-forth.</p>
+            <p>Turnarounds that respect the fact that politics and public controversy do not wait politely.</p>
           </div>
 
           <div class="result-card">
-            <div class="result-number">Clear</div>
-            <p>message development that helps candidates and organizations say the right thing the right way.</p>
+            <div class="result-number">Credible</div>
+            <p>Websites, content, and communications materials that look serious enough to earn trust.</p>
           </div>
         </div>
       </div>
@@ -862,7 +1084,7 @@
       <div class="container contact-grid">
         <div class="contact-copy">
           <div class="section-kicker">Contact</div>
-          <h2 class="section-title">Ready to tighten up your message?</h2>
+          <h2 class="section-title">Ready to tighten up the message?</h2>
           <p>
             Send a quick note and your email app will open with the details filled in.
           </p>
@@ -909,22 +1131,27 @@
     addLogoFallback('headerLogo', 'headerLogoWrap');
     addLogoFallback('panelLogo', 'panelLogoWrap');
 
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
+    const contactForm = document.getElementById('contactForm');
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-      const subject = encodeURIComponent('Patriot Consulting Website Inquiry');
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n\n' +
-        'Message:\n' + message
-      );
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-      window.location.href = 'mailto:dave@patriotconsultingva.com?subject=' + subject + '&body=' + body;
-    });
+        const subject = encodeURIComponent('Patriot Consulting Website Inquiry');
+        const body = encodeURIComponent(
+          'Name: ' + name + '\n' +
+          'Email: ' + email + '\n\n' +
+          'Message:\n' + message
+        );
+
+        window.location.href =
+          'mailto:dave@patriotconsultingva.com?subject=' + subject + '&body=' + body;
+      });
+    }
   </script>
 </body>
 </html>
