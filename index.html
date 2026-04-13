@@ -55,9 +55,9 @@
       font-family: 'Inter', Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(79, 142, 220, 0.13), transparent 30%),
-        radial-gradient(circle at right top, rgba(217, 164, 65, 0.08), transparent 20%),
-        linear-gradient(180deg, #f8fbff 0%, #f2f6fb 100%);
+        radial-gradient(circle at top left, rgba(79, 142, 220, 0.10), transparent 30%),
+        radial-gradient(circle at right top, rgba(217, 164, 65, 0.07), transparent 20%),
+        linear-gradient(180deg, #f7faff 0%, #f2f6fb 100%);
       line-height: 1.6;
     }
 
@@ -80,7 +80,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(248, 251, 255, 0.88);
+      background: rgba(248, 251, 255, 0.84);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line-soft);
     }
@@ -206,14 +206,43 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      position: relative;
+      padding: 84px 0 64px;
+      overflow: hidden;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(247, 250, 255, 0.96) 0%, rgba(247, 250, 255, 0.88) 34%, rgba(247, 250, 255, 0.54) 58%, rgba(16, 37, 66, 0.18) 100%),
+        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(16,37,66,0.18)),
+        url('./loudounHills-1024x768.jpg') center center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(125, 179, 244, 0.16), transparent 22%),
+        radial-gradient(circle at 80% 18%, rgba(217, 164, 65, 0.08), transparent 16%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 30px;
       align-items: stretch;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      padding: 18px 0;
     }
 
     .eyebrow {
@@ -221,7 +250,8 @@
       margin-bottom: 18px;
       padding: 9px 14px;
       border: 1px solid rgba(79, 142, 220, 0.22);
-      background: rgba(79, 142, 220, 0.10);
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(8px);
       border-radius: 999px;
       color: var(--navy-2);
       font-size: 0.76rem;
@@ -233,22 +263,24 @@
     h1 {
       margin: 0;
       font-family: 'Manrope', sans-serif;
-      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-size: clamp(3rem, 6vw, 5.5rem);
       line-height: 0.95;
-      letter-spacing: -0.05em;
-      color: var(--navy);
+      letter-spacing: -0.055em;
+      color: #0f2648;
       max-width: 760px;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.24);
     }
 
     .hero-copy p {
-      margin: 18px 0 0;
+      margin: 20px 0 0;
       max-width: 720px;
-      color: var(--muted);
+      color: #42526a;
       font-size: 1.08rem;
+      font-weight: 500;
     }
 
     .hero-copy p.small {
-      color: var(--muted-2);
+      color: #5c6a7f;
       font-size: 1rem;
     }
 
@@ -288,6 +320,7 @@
       border: 1px solid rgba(16, 24, 40, 0.10);
       color: var(--navy);
       background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px);
     }
 
     .btn-secondary:hover {
@@ -308,9 +341,9 @@
       padding: 30px;
       color: white;
       background:
-        linear-gradient(180deg, rgba(11, 26, 45, 0.24), rgba(11, 26, 45, 0.70)),
-        linear-gradient(135deg, rgba(16, 37, 66, 0.92), rgba(24, 59, 104, 0.74)),
-        url('./loudounHills-1024x768.jpg') center center / cover no-repeat;
+        linear-gradient(180deg, rgba(11, 26, 45, 0.28), rgba(11, 26, 45, 0.74)),
+        linear-gradient(135deg, rgba(16, 37, 66, 0.90), rgba(24, 59, 104, 0.72));
+      backdrop-filter: blur(4px);
     }
 
     .hero-panel::before {
@@ -319,7 +352,7 @@
       inset: 0;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.08), transparent 32%),
-        radial-gradient(circle at bottom left, rgba(255,255,255,0.08), transparent 28%);
+        radial-gradient(circle at bottom left, rgba(255,255,255,0.07), transparent 28%);
       pointer-events: none;
     }
 
@@ -544,8 +577,7 @@
     .difference-card {
       padding: 26px;
       border-radius: 22px;
-      background:
-        linear-gradient(180deg, #ffffff 0%, #f1f6fc 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #f1f6fc 100%);
       border: 1px solid rgba(16, 24, 40, 0.08);
       box-shadow: var(--shadow-soft);
     }
@@ -689,8 +721,21 @@
       stroke-linejoin: round;
     }
 
+    @media (max-width: 1100px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        max-width: 760px;
+      }
+    }
+
     @media (max-width: 980px) {
-      .hero-grid,
       .about-grid,
       .contact-grid,
       .service-grid,
@@ -702,10 +747,9 @@
 
       .hero {
         padding-top: 56px;
-      }
-
-      .hero-panel {
-        min-height: 540px;
+        background:
+          linear-gradient(180deg, rgba(247, 250, 255, 0.88) 0%, rgba(247, 250, 255, 0.72) 46%, rgba(16, 37, 66, 0.16) 100%),
+          url('./loudounHills-1024x768.jpg') center center / cover no-repeat;
       }
     }
 
@@ -751,8 +795,13 @@
         font-size: 1.65rem;
       }
 
-      .hero-panel {
-        min-height: 480px;
+      h1 {
+        font-size: clamp(2.6rem, 11vw, 4rem);
+        line-height: 0.97;
+      }
+
+      .hero {
+        padding: 42px 0 52px;
       }
     }
   </style>
