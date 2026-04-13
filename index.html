@@ -13,11 +13,8 @@
   <style>
     :root {
       --bg: #f4f7fb;
-      --bg-soft: #eaf0f8;
       --panel: rgba(255, 255, 255, 0.82);
-      --panel-strong: rgba(255, 255, 255, 0.95);
       --line: rgba(16, 24, 40, 0.10);
-      --line-soft: rgba(16, 24, 40, 0.06);
       --text: #0f1728;
       --muted: #475467;
       --muted-2: #667085;
@@ -25,14 +22,10 @@
       --navy-2: #183b68;
       --blue: #4f8edc;
       --blue-2: #7db3f4;
-      --sky: #d8ebff;
       --gold: #d9a441;
-      --gold-soft: #f6e7c3;
       --shadow: 0 20px 50px rgba(16, 24, 40, 0.10);
       --shadow-soft: 0 10px 30px rgba(16, 24, 40, 0.06);
       --radius: 28px;
-      --radius-md: 22px;
-      --radius-sm: 16px;
       --max: 1180px;
     }
 
@@ -74,7 +67,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(248, 251, 255, 0.85);
+      background: rgba(248, 251, 255, 0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(16, 24, 40, 0.06);
     }
@@ -95,17 +88,18 @@
     }
 
     .brand-logo {
-      width: 62px;
-      height: 62px;
+      width: 64px;
+      height: 64px;
       border-radius: 18px;
       overflow: hidden;
       flex: 0 0 auto;
-      background: linear-gradient(180deg, #1f4778, #102542);
-      box-shadow: 0 12px 26px rgba(16, 37, 66, 0.24);
+      background: #ffffff;
+      border: 1px solid rgba(16, 24, 40, 0.08);
+      box-shadow: 0 10px 24px rgba(16, 24, 40, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 4px;
     }
 
     .brand-logo img {
@@ -277,8 +271,8 @@
     }
 
     .panel-logo {
-      width: 64px;
-      height: 64px;
+      width: 68px;
+      height: 68px;
       border-radius: 18px;
       background: rgba(255,255,255,0.10);
       border: 1px solid rgba(255,255,255,0.18);
@@ -287,6 +281,13 @@
       justify-content: center;
       padding: 8px;
       backdrop-filter: blur(8px);
+      flex: 0 0 auto;
+    }
+
+    .panel-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .panel-kicker {
@@ -594,7 +595,7 @@
     <div class="container header-inner">
       <a class="brand" href="#top">
         <div class="brand-logo">
-          <img src="patriot_logo_white.png" alt="Patriot Consulting logo" />
+          <img src="./patriot_logo_full_color.png" alt="Patriot Consulting logo" />
         </div>
         <div class="brand-text">
           <div class="brand-title">PATRIOT</div>
@@ -634,7 +635,7 @@
           <div class="hero-panel-inner">
             <div class="panel-top">
               <div class="panel-logo">
-                <img src="patriot_logo_white.png" alt="Patriot Consulting white logo" />
+                <img src="./patriot_logo_white.png" alt="Patriot Consulting white logo" />
               </div>
               <div>
                 <div class="panel-kicker">Core strengths</div>
@@ -763,7 +764,9 @@
           <div class="service-card">
             <div class="service-icon">
               <svg class="icon-svg" viewBox="0 0 24 24">
-                <path d="M22 5.8a8.5 8.5 0 0 1-2.36.64 4.13 4.13 0 0 0 1.8-2.27 8.2 8.2 0 0 1-2.6.99A4.1 4.1 0 0 0 12 8.03a11.65 11.65 0 0 1-8.46-4.3 4.1 4.1 0 0 0 1.27 5.47A4.07 4.07 0 0 1 3 8.7v.05a4.1 4.1 0 0 0 3.29 4.02 4.28 4.28 0 0 1-1.85.07 4.1 4.1 0 0 0 3.83 2.84A8.24 8.24 0 0 1 2 17.54 11.63 11.63 0 0 0 8.29 19c7.55 0 11.68-6.25 11.68-11.67 0-.18-.01-.35-.02-.53A8.18 8.18 0 0 0 22 5.8z"></path>
+                <path d="M4 12h16"></path>
+                <path d="M12 4v16"></path>
+                <circle cx="12" cy="12" r="9"></circle>
               </svg>
             </div>
             <h3>Social Media</h3>
@@ -826,7 +829,7 @@
           <div class="section-kicker">Contact</div>
           <h2 class="section-title">Ready to tighten up your message?</h2>
           <p>
-            This is still the simple version, but now it looks a lot more alive. Next step after this should probably be a real contact form and a stronger second page.
+            This is still the simple version, but now it looks a lot more alive. Next step after this should be a real contact form and a stronger second page.
           </p>
 
           <div class="contact-lines">
