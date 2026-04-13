@@ -93,22 +93,22 @@
       padding: 16px 0;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
+ .brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  width: 260px;
+}
 
 .brand-logo {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   overflow: visible;
-  flex: 0 0 90px;
+  flex: 0 0 110px;
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -119,7 +119,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transform: scale(2);
+  transform: scale(2.35);
   transform-origin: left center;
 }
 
@@ -159,24 +159,6 @@
       color: #fff;
       font-size: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.16);
-    }
-
-    .brand-title {
-      font-family: 'Manrope', sans-serif;
-      font-size: 1.24rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      line-height: 1;
-      color: var(--navy);
-    }
-
-    .brand-subtitle {
-      margin-top: 4px;
-      color: var(--blue);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
     }
 
     nav {
@@ -801,20 +783,15 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Patriot Consulting home">
-        <div class="brand-logo" id="headerLogoWrap">
-          <img
-            src="./patriot_logo_full_color.png"
-            alt="Patriot Consulting logo"
-            id="headerLogo"
-          />
-        </div>
-
-        <div class="brand-text">
-          <div class="brand-title">PATRIOT</div>
-          <div class="brand-subtitle">CONSULTING</div>
-        </div>
-      </a>
+<a class="brand" href="#top" aria-label="Patriot Consulting home">
+  <div class="brand-logo" id="headerLogoWrap">
+    <img
+      src="./patriot_logo_full_color.png"
+      alt="Patriot Consulting logo"
+      id="headerLogo"
+    />
+  </div>
+</a>
 
       <nav aria-label="Primary navigation">
         <a href="#about">Why Patriot</a>
