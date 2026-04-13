@@ -101,47 +101,37 @@
     }
 
     .brand-logo,
-    .panel-logo {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex: 0 0 auto;
-    }
-
-.brand-logo {
-  width: 96px;
-  height: 96px;
-  border-radius: 22px;
-  background: #ffffff;
-  border: 1px solid rgba(16, 24, 40, 0.08);
-  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.12);
-  padding: 8px;
+.panel-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  flex: 0 0 auto;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
 }
 
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+.brand-logo {
+  width: 250px;
+  height: 250px;
+  border-radius: 0;
+}
 
-    .panel-logo {
-      width: 70px;
-      height: 70px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      padding: 8px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-    }
+.panel-logo {
+  width: 250px;
+  height: 250px;
+  border-radius: 0;
+}
 
-    .panel-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+.brand-logo img,
+.panel-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
     .logo-fallback::before {
       content: "PC";
