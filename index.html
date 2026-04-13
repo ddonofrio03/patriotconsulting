@@ -93,47 +93,47 @@
       padding: 16px 0;
     }
 
- .brand {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  width: 260px;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      width: 260px;
+    }
 
-.brand-logo {
-  width: 160px;
-  height: 160px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: visible;
-  flex: 0 0 110px;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  padding: 0;
-}
+    .brand-logo {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: visible;
+      flex: 0 0 110px;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+    }
 
-.brand-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform: scale(2.35);
-  transform-origin: left center;
-}
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(2.35);
+      transform-origin: left center;
+    }
 
-.panel-logo {
-  width: 250px;
-  height: 250px;
-}
+    .panel-logo {
+      width: 250px;
+      height: 250px;
+    }
 
-.brand-logo img,
-.panel-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+    .brand-logo img,
+    .panel-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
     .logo-fallback::before {
       content: "PC";
@@ -748,15 +748,6 @@
         font-size: 1rem;
       }
 
-      .brand-title {
-        font-size: 1.06rem;
-      }
-
-      .brand-subtitle {
-        font-size: 0.72rem;
-        letter-spacing: 0.18em;
-      }
-
       .hero-panel,
       .service-card,
       .result-card,
@@ -778,20 +769,88 @@
         padding: 42px 0 52px;
       }
     }
+
+    /* MOBILE HEADER ONLY LOGO */
+    @media (max-width: 820px) {
+      .site-header {
+        position: relative;
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 72px;
+        padding: 8px 0;
+      }
+
+      .brand {
+        width: 100%;
+        height: 72px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .brand-logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 110px;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+        flex: 0 0 auto;
+      }
+
+      .brand-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: none;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner {
+        min-height: 60px;
+        padding: 4px 0;
+      }
+
+      .brand {
+        height: 60px;
+      }
+
+      .brand-logo {
+        width: 92px;
+        height: 92px;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-<a class="brand" href="#top" aria-label="Patriot Consulting home">
-  <div class="brand-logo" id="headerLogoWrap">
-    <img
-      src="./patriot_logo_full_color.png"
-      alt="Patriot Consulting logo"
-      id="headerLogo"
-    />
-  </div>
-</a>
+      <a class="brand" href="#top" aria-label="Patriot Consulting home">
+        <div class="brand-logo" id="headerLogoWrap">
+          <img
+            src="./patriot_logo_full_color.png"
+            alt="Patriot Consulting logo"
+            id="headerLogo"
+          />
+        </div>
+      </a>
 
       <nav aria-label="Primary navigation">
         <a href="#about">Why Patriot</a>
