@@ -13,7 +13,7 @@
   <style>
     :root {
       --bg: #f4f7fb;
-      --panel: rgba(255, 255, 255, 0.82);
+      --panel: rgba(255, 255, 255, 0.86);
       --line: rgba(16, 24, 40, 0.10);
       --text: #0f1728;
       --muted: #475467;
@@ -26,6 +26,8 @@
       --shadow: 0 20px 50px rgba(16, 24, 40, 0.10);
       --shadow-soft: 0 10px 30px rgba(16, 24, 40, 0.06);
       --radius: 28px;
+      --radius-md: 22px;
+      --radius-sm: 16px;
       --max: 1180px;
     }
 
@@ -87,18 +89,23 @@
       min-width: 0;
     }
 
+    .brand-logo,
+    .panel-logo {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+
     .brand-logo {
       width: 64px;
       height: 64px;
       border-radius: 18px;
-      overflow: hidden;
-      flex: 0 0 auto;
       background: #ffffff;
       border: 1px solid rgba(16, 24, 40, 0.08);
       box-shadow: 0 10px 24px rgba(16, 24, 40, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       padding: 4px;
     }
 
@@ -106,6 +113,48 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+
+    .panel-logo {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 8px;
+      backdrop-filter: blur(8px);
+    }
+
+    .panel-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .logo-fallback::before {
+      content: "PC";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      border-radius: inherit;
+    }
+
+    .brand-logo.logo-fallback::before {
+      background: linear-gradient(135deg, #193c6a, #4f8edc);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .panel-logo.logo-fallback::before {
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.16);
     }
 
     .brand-title {
@@ -268,26 +317,6 @@
       align-items: center;
       gap: 14px;
       margin-bottom: 26px;
-    }
-
-    .panel-logo {
-      width: 68px;
-      height: 68px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px;
-      backdrop-filter: blur(8px);
-      flex: 0 0 auto;
-    }
-
-    .panel-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
     }
 
     .panel-kicker {
@@ -512,6 +541,12 @@
       resize: vertical;
     }
 
+    .form-note {
+      margin: 6px 0 0;
+      color: var(--muted-2);
+      font-size: 0.92rem;
+    }
+
     footer {
       border-top: 1px solid rgba(16, 24, 40, 0.06);
       padding: 22px 0 34px;
@@ -594,8 +629,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top">
-        <div class="brand-logo">
-          <img src="./patriot_logo_full_color.png" alt="Patriot Consulting logo" />
+        <div class="brand-logo" id="headerLogoWrap">
+          <img src="./logo.png" alt="Patriot Consulting logo" id="headerLogo" />
         </div>
         <div class="brand-text">
           <div class="brand-title">PATRIOT</div>
@@ -634,8 +669,8 @@
         <div class="card hero-panel">
           <div class="hero-panel-inner">
             <div class="panel-top">
-              <div class="panel-logo">
-                <img src="./patriot_logo_white.png" alt="Patriot Consulting white logo" />
+              <div class="panel-logo" id="panelLogoWrap">
+                <img src="./logo.png" alt="Patriot Consulting logo" id="panelLogo" />
               </div>
               <div>
                 <div class="panel-kicker">Core strengths</div>
@@ -829,7 +864,7 @@
           <div class="section-kicker">Contact</div>
           <h2 class="section-title">Ready to tighten up your message?</h2>
           <p>
-            This is still the simple version, but now it looks a lot more alive. Next step after this should be a real contact form and a stronger second page.
+            Send a quick note and your email app will open with the details filled in.
           </p>
 
           <div class="contact-lines">
@@ -839,11 +874,12 @@
         </div>
 
         <div class="form-card">
-          <form>
-            <input type="text" placeholder="Your name" />
-            <input type="email" placeholder="Your email" />
-            <textarea placeholder="How can Patriot help?"></textarea>
-            <button class="btn btn-primary" type="button">Send message</button>
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Your email" required />
+            <textarea id="message" placeholder="How can Patriot help?" required></textarea>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-note">This uses your device’s email app. No form service needed.</p>
           </form>
         </div>
       </div>
@@ -856,5 +892,39 @@
       <div>Built for GitHub Pages</div>
     </div>
   </footer>
+
+  <script>
+    function addLogoFallback(imgId, wrapId) {
+      const img = document.getElementById(imgId);
+      const wrap = document.getElementById(wrapId);
+
+      if (!img || !wrap) return;
+
+      img.addEventListener('error', function () {
+        img.style.display = 'none';
+        wrap.classList.add('logo-fallback');
+      });
+    }
+
+    addLogoFallback('headerLogo', 'headerLogoWrap');
+    addLogoFallback('panelLogo', 'panelLogoWrap');
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('Patriot Consulting Website Inquiry');
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        'Message:\n' + message
+      );
+
+      window.location.href = 'mailto:dave@patriotconsultingva.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
 </body>
 </html>
